@@ -4,6 +4,5 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 COPY app.py ./
-# If your app needs bundled data, add it to the repo and uncomment:
-# COPY data ./data
+# (If you later add a data/ folder: COPY data ./data)
 CMD ["streamlit","run","app.py","--server.port=8080","--server.address=0.0.0.0","--browser.gatherUsageStats=false"]
